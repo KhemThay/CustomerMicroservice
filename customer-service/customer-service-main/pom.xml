@@ -33,11 +33,6 @@
         </dependency>
         <dependency>
             <groupId>dtwg.mptc</groupId>
-            <artifactId>customer-service-messaging</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>dtwg.mptc</groupId>
             <artifactId>customer-service-persistence</artifactId>
             <version>${project.version}</version>
         </dependency>

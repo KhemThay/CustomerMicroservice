@@ -17,6 +17,14 @@
             <groupId>dtwg.mptc</groupId>
             <artifactId>common-domain</artifactId>
         </dependency>
+        <dependency>
+            <groupId>dtwg.mptc</groupId>
+            <artifactId>order-domain-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>dtwg.mptc</groupId>
+            <artifactId>order-domain-core</artifactId>
+        </dependency>
     </dependencies>
 
 

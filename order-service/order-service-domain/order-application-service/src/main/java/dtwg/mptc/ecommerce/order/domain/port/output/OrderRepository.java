@@ -1,4 +1,4 @@
-package dtwg.mptc.ecommerce.domain.port.output;
+package dtwg.mptc.ecommerce.order.domain.port.output;
 
 import dtwg.mptc.ecommerce.domain.entity.Order;
 

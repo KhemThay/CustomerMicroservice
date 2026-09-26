@@ -16,6 +16,9 @@ public class Customer extends AggregateRoot<CustomerId>{
         giveName = builder.giveName;
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
 
     public static final class Builder {
         private CustomerId id;
@@ -26,9 +29,6 @@ public class Customer extends AggregateRoot<CustomerId>{
         private Builder() {
         }
 
-        public static Builder builder() {
-            return new Builder();
-        }
 
         public Builder id(CustomerId val) {
             id = val;

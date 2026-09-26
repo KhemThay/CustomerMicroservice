@@ -2,6 +2,9 @@ package dtwg.mptc.ecommerce.entity;
 
 import dtwg.mptc.ecommerce.domain.entity.AggregateRoot;
 import dtwg.mptc.ecommerce.domain.valueobject.*;
+import dtwg.mptc.ecommerce.exception.CustomerDomainException;
+
+import java.util.UUID;
 
 public class Customer extends AggregateRoot<CustomerId> {
 
@@ -13,6 +16,88 @@ public class Customer extends AggregateRoot<CustomerId> {
     private LoyaltyTier loyaltyTier;
     private CustomerStatus status;
 
+    public String getUsername() {
+        return username;
+    }
+
+    public String getFamilyName() {
+        return familyName;
+    }
+
+    public String getGivenName() {
+        return givenName;
+    }
+
+    public Email getEmail() {
+        return email;
+    }
+
+    public PhoneNumber getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public LoyaltyTier getLoyaltyTier() {
+        return loyaltyTier;
+    }
+
+    public CustomerStatus getStatus() {
+        return status;
+    }
+
+    public void validateCustomer(){
+        validateInitialCustomer();
+        validateUsername(username);
+        validateEmail(email);
+    }
+
+    private void validateEmail(Email email) {
+        if (email == null || isBlank(email.value())){
+            throw new CustomerDomainException("Email is not valid");
+        }
+    }
+
+    private void validateUsername(String username) {
+        if (isBlank(username)) {
+            throw new CustomerDomainException("Username is required");
+        }
+    }
+
+    private void validateInitialCustomer() {
+        if(status != null || super.getId() != null){
+            throw new CustomerDomainException("Customer already exists");
+        }
+    }
+
+    private static boolean isBlank(String value) {
+        return value == null || value.isBlank();
+    }
+
+    public void initiateCustomer(){
+        setId(new CustomerId(UUID.randomUUID()));
+        status = CustomerStatus.ACTIVE;
+        if(loyaltyTier == null){
+            loyaltyTier = LoyaltyTier.BRONZE;
+        }
+    }
+
+    public void updateCustomer(String familyName, String givenName, Email email, PhoneNumber phoneNumber){
+        if(status != CustomerStatus.ACTIVE){
+            throw new CustomerDomainException("Customer can not be updated");
+        }
+        validateEmail(email);
+        this.familyName = familyName;
+        this.givenName = givenName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void deactivateCustomer(){
+        if(status != CustomerStatus.ACTIVE){
+            throw new CustomerDomainException("Customer is already deactivated");
+        }
+        status = CustomerStatus.INACTIVE;
+    }
+
     private Customer(Builder builder) {
         super.setId(builder.id);
         username = builder.username;
@@ -21,6 +106,11 @@ public class Customer extends AggregateRoot<CustomerId> {
         email = builder.email;
         phoneNumber = builder.phoneNumber;
         loyaltyTier = builder.loyaltyTier;
+        status = builder.status;
+    }
+
+    public static Builder builder() {
+        return new Builder();
     }
 
     public static final class Builder {
@@ -31,12 +121,9 @@ public class Customer extends AggregateRoot<CustomerId> {
         private Email email;
         private PhoneNumber phoneNumber;
         private LoyaltyTier loyaltyTier;
+        private CustomerStatus status;
 
         private Builder() {
-        }
-
-        public static Builder builder() {
-            return new Builder();
         }
 
         public Builder id(CustomerId val) {
@@ -71,6 +158,11 @@ public class Customer extends AggregateRoot<CustomerId> {
 
         public Builder loyaltyTier(LoyaltyTier val) {
             loyaltyTier = val;
+            return this;
+        }
+
+        public Builder status(CustomerStatus val) {
+            status = val;
             return this;
         }
 

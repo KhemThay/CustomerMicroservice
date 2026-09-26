@@ -5,33 +5,39 @@ import dtwg.mptc.ecommerce.domain.valueobject.ProductId;
 
 public class Product extends BaseEntity<ProductId> {
 
-    private  final ProductId productId;
-    private  final Money price;
+    private String name;
+    private Money price;
 
-    public ProductId getProductId() {
-        return productId;
+    public String getName() {
+        return name;
     }
 
     public Money getPrice() {
         return price;
     }
 
+    public void updateConfirmedNameAndPrice(String name, Money price) {
+        this.name = name;
+        this.price = price;
+    }
+
     private Product(Builder builder) {
         super.setId(builder.id);
-        productId = builder.productId;
+        name = builder.name;
         price = builder.price;
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
+
     public static final class Builder {
         private ProductId id;
-        private ProductId productId;
+        private String name;
         private Money price;
 
         private Builder() {
-        }
-
-        public static Builder builder() {
-            return new Builder();
         }
 
         public Builder id(ProductId val) {
@@ -39,8 +45,8 @@ public class Product extends BaseEntity<ProductId> {
             return this;
         }
 
-        public Builder productId(ProductId val) {
-            productId = val;
+        public Builder name(String val) {
+            name = val;
             return this;
         }
 

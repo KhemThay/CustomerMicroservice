@@ -17,6 +17,10 @@
     <modules>
         <module>common</module>
         <module>order-service</module>
+        <module>customer-service</module>
+        <module>customer-service/customer-domain</module>
+        <module>customer-service/customer-domain/customer-domain-core</module>
+        <module>customer-service/customer-domain/customer-application-service</module>
     </modules>
 
     <properties>

@@ -10,7 +10,7 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>customer-domain</artifactId>
+    <artifactId>customer-service-domain</artifactId>
 
 
 </project>

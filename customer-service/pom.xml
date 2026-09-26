@@ -13,7 +13,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>customer-domain</module>
-        <module>../common/common-domain</module>
+        <module>customer-service-persistence</module>
+        <module>customer-service-restapi</module>
+        <module>customer-service-main</module>
     </modules>
 </project>

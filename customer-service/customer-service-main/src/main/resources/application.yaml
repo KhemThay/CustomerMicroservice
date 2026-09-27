@@ -1,43 +1,21 @@
 #change customer service running port
 
-#server:
-#  port: 8551
-#
-#spring:
-#  application:
-#    name: customer-service
-#  datasource:
-#    driver-class-name: org.postgresql.Driver
-#    username: postgres
-#    password: postgres
-#    url: jdbc:postgresql://localhost:8432/db_customer
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    show-sql: true
-#    properties:
-#      hibernate:
-#        format_sql: true
-
 server:
-  port: 8081
+  port: 8551
 
 spring:
   application:
-    name: order-service
+    name: customer-service
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: ecommerce_user
-    password: mypassword
-    url: jdbc:postgresql://localhost:8432/db_order
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:8432/db_customer
   jpa:
-    defer-datasource-initialization: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
         format_sql: true
-  sql:
-    init:
-      mode: always
+

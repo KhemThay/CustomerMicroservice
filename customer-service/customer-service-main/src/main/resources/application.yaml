@@ -1,4 +1,4 @@
-#change order srvice running port
+#change customer service running port
 
 server:
   port: 8551

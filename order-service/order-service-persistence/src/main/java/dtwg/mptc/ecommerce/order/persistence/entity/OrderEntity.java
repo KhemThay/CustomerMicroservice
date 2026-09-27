@@ -19,23 +19,23 @@ import java.util.UUID;
 public class OrderEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     private UUID customerId;
 
     private UUID businessId;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private OrderAddressEntity orderAddress;
 
     private BigDecimal price;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItemEntity> items;
 
     private  UUID trackingId;
 
+    @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
     private String failureMessages;

@@ -3,7 +3,9 @@ package dtwg.mptc.ecommerce.domain.entity;
 import dtwg.mptc.ecommerce.domain.valueobject.Money;
 import dtwg.mptc.ecommerce.domain.valueobject.OrderId;
 import dtwg.mptc.ecommerce.domain.valueobject.OrderItemId;
+import lombok.Getter;
 
+@Getter
 public class OrderItem extends BaseEntity<OrderItemId> {
 
     private OrderId orderId;
@@ -34,24 +36,8 @@ public class OrderItem extends BaseEntity<OrderItemId> {
 
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public Money getPrice() {
-        return price;
-    }
-
-    public Money getSubTotal() {
-        return subTotal;
-    }
-
-    public OrderId getOrderId() {
-        return orderId;
+    public static Builder builder() {
+        return new Builder();
     }
 
     public static final class Builder {
@@ -63,10 +49,6 @@ public class OrderItem extends BaseEntity<OrderItemId> {
         private OrderId orderId;
 
         private Builder() {
-        }
-
-        public static Builder builder() {
-            return new Builder();
         }
 
         public Builder id(OrderItemId val) {

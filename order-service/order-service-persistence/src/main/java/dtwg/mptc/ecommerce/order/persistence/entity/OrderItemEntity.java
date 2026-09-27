@@ -15,8 +15,7 @@ import java.util.UUID;
 public class OrderItemEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto increase
-    private Integer id;
+    private UUID id;
 
     private UUID productId;
 

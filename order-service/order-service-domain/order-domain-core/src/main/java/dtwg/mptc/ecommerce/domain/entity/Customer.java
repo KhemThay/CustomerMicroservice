@@ -1,7 +1,9 @@
 package dtwg.mptc.ecommerce.domain.entity;
 
 import dtwg.mptc.ecommerce.domain.valueobject.CustomerId;
+import lombok.Getter;
 
+@Getter
 public class Customer extends AggregateRoot<CustomerId>{
 
 

@@ -7,6 +7,7 @@ import dtwg.mptc.ecommerce.event.CustomerCreatedEvent;
 import dtwg.mptc.ecommerce.event.CustomerDeactivatedEvent;
 import dtwg.mptc.ecommerce.event.CustomerUpdatedEvent;
 
+
 public interface CustomerDomainService {
     CustomerCreatedEvent validateAndInitiateCustomer(Customer customer);
 

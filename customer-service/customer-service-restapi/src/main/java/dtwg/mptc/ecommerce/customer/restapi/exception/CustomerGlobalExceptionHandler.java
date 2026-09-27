@@ -1,5 +1,7 @@
 package dtwg.mptc.ecommerce.customer.restapi.exception;
 
+import dtwg.mptc.ecommerce.customer.domain.exception.CustomerAlreadyExistsException;
+import dtwg.mptc.ecommerce.customer.domain.exception.CustomerNotFoundException;
 import dtwg.mptc.ecommerce.exception.CustomerDomainException;
 import dtwg.mptc.ecommerce.restapi.dto.RestApiErrorResponse;
 import dtwg.mptc.ecommerce.restapi.exception.GlobalExceptionHandler;
@@ -14,8 +16,24 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class CustomerGlobalExceptionHandler extends GlobalExceptionHandler {
 
-    //TODO 404 handler once application layer has CustomerNotFoundException
-    //TODO 409 handler once application layer has a duplicate username/email exception
+    // Spring picks the most specific handler, so these win over the CustomerDomainException (400) handler below
+    @ExceptionHandler(CustomerNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public RestApiErrorResponse<?> handleCustomerNotFoundException(CustomerNotFoundException e) {
+        return RestApiErrorResponse.builder()
+                .code(HttpStatus.NOT_FOUND.getReasonPhrase())
+                .message(e.getMessage())
+                .build();
+    }
+
+    @ExceptionHandler(CustomerAlreadyExistsException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public RestApiErrorResponse<?> handleCustomerAlreadyExistsException(CustomerAlreadyExistsException e) {
+        return RestApiErrorResponse.builder()
+                .code(HttpStatus.CONFLICT.getReasonPhrase())
+                .message(e.getMessage())
+                .build();
+    }
 
     @ExceptionHandler(CustomerDomainException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)

@@ -22,7 +22,7 @@ public class BusinessEntity {
     @Id
     private UUID productId;
 
-    private boolean businessActive;
+    private Boolean businessActive;
     private String productName;
     private BigDecimal productPrice;
 

@@ -8,9 +8,9 @@ spring:
     name: customer-service
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: postgres
-    url: jdbc:postgresql://localhost:8432/db_customer
+    username: ecommerce_usr
+    password: qwerqwer
+    url: jdbc:postgresql://localhost:8432/db_order
   jpa:
     hibernate:
       ddl-auto: update

@@ -1,9 +1,11 @@
 package dtwg.mptc.ecommerce.domain.entity;
 
 import dtwg.mptc.ecommerce.domain.valueobject.BusinessId;
+import lombok.Getter;
 
 import java.util.List;
 
+@Getter
 public class Business extends  AggregateRoot<BusinessId>{
 
     final private List<Product> products;
@@ -15,12 +17,8 @@ public class Business extends  AggregateRoot<BusinessId>{
         active = builder.active;
     }
 
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public boolean isActive() {
-        return active;
+    public static Builder builder() {
+        return new Builder();
     }
 
 
@@ -32,9 +30,6 @@ public class Business extends  AggregateRoot<BusinessId>{
         private Builder() {
         }
 
-        public static Builder builder() {
-            return new Builder();
-        }
 
         public Builder id(BusinessId val) {
             id = val;

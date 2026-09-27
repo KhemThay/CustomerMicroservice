@@ -2,19 +2,13 @@ package dtwg.mptc.ecommerce.domain.entity;
 
 import dtwg.mptc.ecommerce.domain.valueobject.Money;
 import dtwg.mptc.ecommerce.domain.valueobject.ProductId;
+import lombok.Getter;
 
+@Getter
 public class Product extends BaseEntity<ProductId> {
 
     private String name;
     private Money price;
-
-    public String getName() {
-        return name;
-    }
-
-    public Money getPrice() {
-        return price;
-    }
 
     public void updateConfirmedNameAndPrice(String name, Money price) {
         this.name = name;

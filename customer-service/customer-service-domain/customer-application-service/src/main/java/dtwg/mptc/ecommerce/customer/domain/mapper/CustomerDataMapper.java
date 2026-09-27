@@ -1,7 +1,6 @@
 package dtwg.mptc.ecommerce.customer.domain.mapper;
 
 import dtwg.mptc.ecommerce.customer.domain.dto.CreateCustomerCommand;
-import dtwg.mptc.ecommerce.customer.domain.dto.CustomerResult;
 import dtwg.mptc.ecommerce.domain.valueobject.Email;
 import dtwg.mptc.ecommerce.domain.valueobject.PhoneNumber;
 import dtwg.mptc.ecommerce.entity.Customer;
@@ -24,17 +23,5 @@ public class CustomerDataMapper {
 
     public PhoneNumber toPhoneNumber(String phoneNumber) {
         return phoneNumber == null ? null : new PhoneNumber(phoneNumber);
-    }
-
-    public CustomerResult customerToCustomerResult(Customer customer) {
-        return new CustomerResult(
-                customer.getId().value(),
-                customer.getUsername(),
-                customer.getFamilyName(),
-                customer.getGivenName(),
-                customer.getEmail() == null ? null : customer.getEmail().value(),
-                customer.getPhoneNumber() == null ? null : customer.getPhoneNumber().number(),
-                customer.getLoyaltyTier(),
-                customer.getStatus());
     }
 }

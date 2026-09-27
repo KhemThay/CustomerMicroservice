@@ -1,7 +1,7 @@
 package dtwg.mptc.ecommerce.order.persistence.entity;
 
 
-import dtwg.mptc.ecommerce.order.domain.valueobject.OrderStatus;
+import dtwg.mptc.ecommerce.domain.valueobject.OrderStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

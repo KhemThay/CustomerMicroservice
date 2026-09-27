@@ -1,7 +1,7 @@
 package dtwg.mptc.ecommerce.order.persistence.adapter;
 
-import dtwg.mptc.ecommerce.order.domain.entity.Business;
-import dtwg.mptc.ecommerce.order.domain.port.output.BusinessRepository;
+import dtwg.mptc.ecommerce.domain.entity.Business;
+import dtwg.mptc.ecommerce.domain.port.output.BusinessRepository;
 import dtwg.mptc.ecommerce.order.persistence.entity.BusinessEntity;
 import dtwg.mptc.ecommerce.order.persistence.mapper.BusinessPersistenceMapper;
 import dtwg.mptc.ecommerce.order.persistence.repository.BusinessJpaRepository;
@@ -20,7 +20,7 @@ public class BusinessRepositoryAdapter implements BusinessRepository {
     private final BusinessPersistenceMapper businessPersistenceMapper;
 
     @Override
-    public Optional<Business> findBusiness(Business  business) {
+    public Optional<Business> findBusiness(Business business) {
 
         List<UUID> businessProducts = businessPersistenceMapper.businessToBusinessProducts(business);
 

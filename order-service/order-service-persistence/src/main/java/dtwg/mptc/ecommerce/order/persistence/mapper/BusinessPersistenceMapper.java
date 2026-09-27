@@ -1,11 +1,11 @@
 package dtwg.mptc.ecommerce.order.persistence.mapper;
 
 
-import dtwg.mptc.ecommerce.order.domain.entity.Business;
-import dtwg.mptc.ecommerce.order.domain.entity.Product;
-import dtwg.mptc.ecommerce.order.domain.valueobject.BusinessId;
-import dtwg.mptc.ecommerce.order.domain.valueobject.Money;
-import dtwg.mptc.ecommerce.order.domain.valueobject.ProductId;
+import dtwg.mptc.ecommerce.domain.entity.Business;
+import dtwg.mptc.ecommerce.domain.entity.Product;
+import dtwg.mptc.ecommerce.domain.valueobject.BusinessId;
+import dtwg.mptc.ecommerce.domain.valueobject.Money;
+import dtwg.mptc.ecommerce.domain.valueobject.ProductId;
 import dtwg.mptc.ecommerce.order.persistence.entity.BusinessEntity;
 import dtwg.mptc.ecommerce.persistence.business.exception.BusinessPersistenceException;
 import org.mapstruct.Mapper;

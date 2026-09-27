@@ -1,7 +1,7 @@
 package dtwg.mptc.ecommerce.order.restapi.mapper;
 
-import dtwg.mptc.ecommerce.order.domain.dto.CreateOrderCommand;
-import dtwg.mptc.ecommerce.order.domain.dto.CreateOrderResult;
+import dtwg.mptc.ecommerce.domain.dto.CreateOrderCommand;
+import dtwg.mptc.ecommerce.domain.dto.CreateOrderResult;
 import dtwg.mptc.ecommerce.order.restapi.dto.OrderCreateRequest;
 import dtwg.mptc.ecommerce.order.restapi.dto.OrderCreateResponse;
 import org.mapstruct.Mapper;

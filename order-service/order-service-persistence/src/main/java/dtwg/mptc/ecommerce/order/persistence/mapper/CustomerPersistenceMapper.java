@@ -1,6 +1,6 @@
 package dtwg.mptc.ecommerce.order.persistence.mapper;
 
-import dtwg.mptc.ecommerce.order.domain.entity.Customer;
+import dtwg.mptc.ecommerce.domain.entity.Customer;
 import dtwg.mptc.ecommerce.order.persistence.entity.CustomerEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

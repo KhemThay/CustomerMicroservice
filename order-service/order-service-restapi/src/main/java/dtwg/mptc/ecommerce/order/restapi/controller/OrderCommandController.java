@@ -1,12 +1,12 @@
 package dtwg.mptc.ecommerce.order.restapi.controller;
 
 
-import dtwg.mptc.ecommerce.order.domain.dto.CreateOrderCommand;
-import dtwg.mptc.ecommerce.order.domain.dto.CreateOrderResult;
+import dtwg.mptc.ecommerce.domain.dto.CreateOrderCommand;
+import dtwg.mptc.ecommerce.domain.dto.CreateOrderResult;
 import dtwg.mptc.ecommerce.order.restapi.dto.OrderCreateRequest;
 import dtwg.mptc.ecommerce.order.restapi.dto.OrderCreateResponse;
 import dtwg.mptc.ecommerce.order.restapi.mapper.OrderWebMapper;
-import dtwg.mptc.ecommerce.order.domain.usecase.CreateOrderUseCase;
+import dtwg.mptc.ecommerce.domain.usecase.CreateOrderUseCase;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

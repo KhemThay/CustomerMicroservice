@@ -8,10 +8,10 @@ import dtwg.mptc.ecommerce.customer.domain.port.output.CustomerRepository;
 import dtwg.mptc.ecommerce.entity.Customer;
 import dtwg.mptc.ecommerce.event.CustomerCreatedEvent;
 import dtwg.mptc.ecommerce.service.CustomerDomainService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 // Use case: register a new customer.
 // Called by the REST API controller (POST /api/v1/customers).

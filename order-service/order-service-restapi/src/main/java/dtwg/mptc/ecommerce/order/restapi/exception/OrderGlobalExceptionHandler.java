@@ -1,17 +1,14 @@
 package dtwg.mptc.ecommerce.order.restapi.exception;
 
 
-import dtwg.mptc.ecommerce.order.domain.exception.OrderDomainException;
+import dtwg.mptc.ecommerce.domain.exception.OrderDomainException;
 import dtwg.mptc.ecommerce.persistence.business.exception.BusinessPersistenceException;
 import dtwg.mptc.ecommerce.restapi.dto.RestApiErrorResponse;
 import dtwg.mptc.ecommerce.restapi.exception.GlobalExceptionHandler;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import java.util.List;
 
 @RestControllerAdvice
 public class OrderGlobalExceptionHandler extends GlobalExceptionHandler {

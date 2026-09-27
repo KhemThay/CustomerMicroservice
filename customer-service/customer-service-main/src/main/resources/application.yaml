@@ -1,14 +1,16 @@
+#change customer service running port
+
 server:
-  port: 8550
+  port: 8551
 
 spring:
   application:
-    name: order-service
+    name: customer-service
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: ecommerce_usr
-    password: qwerqwer
-    url: jdbc:postgresql://localhost:8432/db_order
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:8432/db_customer
   jpa:
     hibernate:
       ddl-auto: update

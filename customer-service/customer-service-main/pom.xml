@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>customer-service-main</artifactId>
-    
+
     <dependencies>
         <dependency>
             <groupId>dtwg.mptc</groupId>
@@ -48,10 +48,5 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
-   <!-- <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>-->
 
 </project>

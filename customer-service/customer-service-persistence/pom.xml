@@ -10,8 +10,6 @@
     </parent>
 
     <artifactId>customer-service-persistence</artifactId>
-
-
     <dependencies>
         <dependency>
             <groupId>dtwg.mptc</groupId>

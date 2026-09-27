@@ -17,5 +17,4 @@
         <module>customer-service-main</module>
         <module>customer-service-domain</module>
     </modules>
-
 </project>

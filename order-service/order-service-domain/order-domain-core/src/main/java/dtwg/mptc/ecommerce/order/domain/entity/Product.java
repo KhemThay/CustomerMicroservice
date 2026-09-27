@@ -1,7 +1,7 @@
-package dtwg.mptc.ecommerce.order.domain.entity;
+package dtwg.mptc.ecommerce.domain.entity;
 
-import dtwg.mptc.ecommerce.order.domain.valueobject.Money;
-import dtwg.mptc.ecommerce.order.domain.valueobject.ProductId;
+import dtwg.mptc.ecommerce.domain.valueobject.Money;
+import dtwg.mptc.ecommerce.domain.valueobject.ProductId;
 
 public class Product extends BaseEntity<ProductId> {
 
@@ -16,10 +16,9 @@ public class Product extends BaseEntity<ProductId> {
         return price;
     }
 
-
-    public void updateConfirmedNameAndPrice(String name, Money price){
+    public void updateConfirmedNameAndPrice(String name, Money price) {
         this.name = name;
-        this.price= price ;
+        this.price = price;
     }
 
     private Product(Builder builder) {

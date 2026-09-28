@@ -10,7 +10,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: ecommerce_usr
     password: qwerqwer
-    url: jdbc:postgresql://localhost:8432/db_order
+    url: jdbc:postgresql://localhost:8432/db_customer
   jpa:
     hibernate:
       ddl-auto: update

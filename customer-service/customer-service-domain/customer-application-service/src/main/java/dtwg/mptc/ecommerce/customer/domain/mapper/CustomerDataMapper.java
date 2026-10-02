@@ -4,24 +4,24 @@ import dtwg.mptc.ecommerce.customer.domain.dto.CreateCustomerCommand;
 import dtwg.mptc.ecommerce.domain.valueobject.Email;
 import dtwg.mptc.ecommerce.domain.valueobject.PhoneNumber;
 import dtwg.mptc.ecommerce.entity.Customer;
-import org.springframework.stereotype.Component;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 
-@Component
-public class CustomerDataMapper {
+@Mapper(componentModel = "spring")
+public interface CustomerDataMapper {
 
     // id and status are not set here: the domain sets them in initiateCustomer()
-    public Customer createCustomerCommandToCustomer(CreateCustomerCommand createCustomerCommand) {
-        return Customer.builder()
-                .username(createCustomerCommand.username())
-                .familyName(createCustomerCommand.familyName())
-                .givenName(createCustomerCommand.givenName())
-                .email(new Email(createCustomerCommand.email()))
-                .phoneNumber(toPhoneNumber(createCustomerCommand.phoneNumber()))
-                .build();
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "status", ignore = true)
+    @Mapping(target = "loyaltyTier", ignore = true)
+    Customer createCustomerCommandToCustomer(CreateCustomerCommand createCustomerCommand);
+
+    default Email toEmail(String email) {
+        return email == null ? null : new Email(email);
     }
 
-    public PhoneNumber toPhoneNumber(String phoneNumber) {
+    default PhoneNumber toPhoneNumber(String phoneNumber) {
         return phoneNumber == null ? null : new PhoneNumber(phoneNumber);
     }
 
